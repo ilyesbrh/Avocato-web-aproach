@@ -3,16 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { ArchiveModule } from './archive/archive.module';
-import { AuthenticationModule } from './authentication/authentication.module';
-import { AlarmModule } from './alarm/alarm.module';
-import { ParametersModule } from './parameters/parameters.module';
-import { NotesModule } from './notes/notes.module';
-import { ContactsModule } from './contacts/contacts.module';
-import { FundModule } from './fund/fund.module';
-import { ListeningSessionModule } from './listening-session/listening-session.module';
-
+import { AuthManagerService } from './website/auth-manager.service';
+import { DataModuleModule } from './Store/data-module.module';
+import { GraphQlService } from './Store/graph-ql.service';
+import { WebsiteModule } from './website/website.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialComponentsModule } from './UiLibrary/material-components/material-components.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -20,9 +16,13 @@ import { ListeningSessionModule } from './listening-session/listening-session.mo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthenticationModule,
-    ],
-  providers: [],
+    DataModuleModule,
+    BrowserAnimationsModule,
+    MaterialComponentsModule,
+    WebsiteModule,
+
+  ],
+  providers: [GraphQlService, AuthManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

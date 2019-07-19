@@ -1,0 +1,16 @@
+<input type="checkbox" id="hamburger" name="hamburger" />
+<label for="hamburger"></label>
+<div class="menu-container">
+  <div class="menu"></div>
+  <div class="links">
+    <a [routerLink]="[ '/home']">Home</a>
+    <a [routerLink]="[ '/login']">Login</a>
+    <a [routerLink]="[ '/register']">Register</a>
+    <a [routerLink]="[ '/aboutUs']">About</a>
+    <a [routerLink]="[ '/contact']">Contact</a>
+    <a [routerLink]="[ '/help']">Help</a>
+    </div>
+</div>
+<div class="content container">
+  <router-outlet></router-outlet>
+</div>
