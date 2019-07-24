@@ -1,19 +1,35 @@
-<form class="col-12 row" style="max-width: 300px;text-align: center">
-  <h1>LOGIN</h1>
-  <input placeholder="Username" type="text" required="">
-  <input placeholder="Password" type="password" required="">
-  <button>Submit</button>
-</form> 
-
-<div class="col-12 row">
-  <div class="col-4">
-    <!-- 
-    <a class="follow" href="https://twitter.com/mildrenben" target="_blank"><i class="fab fa-twitter"></i>Follow Me</a>
-  </div>
-  <div class="col-4">
-    <a class="follow" href="https://twitter.com/mildrenben" target="_blank"><i class="fab fa-twitter"></i>Follow Me</a>
-  </div>
-  <div class="col-4">
-    <a class="follow" href="https://twitter.com/mildrenben" target="_blank"><i class="fab fa-twitter"></i>Follow Me</a>
-  </div> -->
-</div>  
+<div class="d-flex justify-content-center align-items-center m-0 p-0" style="min-height: 100vh;">
+  <mat-card class="py-5 login-card" style="max-width: 600px;">
+    <mat-card-header class="d-flex flex-column align-items-center">
+      <img src="/assets/svg/logo.svg" width="200px" alt="">
+      <p style="font-size: 28px;font-weight: 800">Log in</p>
+    </mat-card-header>
+    <mat-card-content>
+      <form #Form="ngForm" class="mx-4 my -4">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <input matInput placeholder="Username" name="username" [(ngModel)]="Form.value.username" required>
+          <mat-label>Username</mat-label>
+          <mat-icon matSuffix>face</mat-icon>
+          <mat-error *ngIf="Form.value.username "> username must be
+            more then 5 characters</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="Form.value.password"
+            required>
+          <mat-icon matSuffix>lock_outline</mat-icon>
+          <mat-error *ngIf="Form.value.password && (Form.value.password.length < 5) "> password must be
+            more then 5 characters</mat-error>
+        </mat-form-field>
+        <div class="d-flex justify-content-between">
+          <mat-checkbox color="warn" >Remember me </mat-checkbox>
+        <a  href="#" [routerLink]="[ '/register' ]" style="font-weight: 700">create account ?</a>
+        </div>
+      </form>
+      <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+    </mat-card-content>
+    <mat-card-actions align="center">
+      <button type="submit" class="login-btn" (click)="login(Form.value)" mat-raised-button color="primary">LOGIN</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

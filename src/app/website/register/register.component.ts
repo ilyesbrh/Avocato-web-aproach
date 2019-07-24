@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
+  showSpinner = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  login(formData){
+    console.log(formData);
+    
   }
 
 }

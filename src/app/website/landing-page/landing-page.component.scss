@@ -1,83 +1,62 @@
+@import '~@angular/material/theming';
 
-.menu-container {
-	position: absolute;
-	width:5rem;
-	height: 5rem;
-	overflow: hidden;
-	left:0;
-	top: 0;
-	transition-delay: .3s;
+
+.background-img {
+    background-image: url('/assets/images/Background.jpg')
 }
 
 .menu {
-	position: relative;
-	width: 10rem;
-	height: 10rem;
-	background-color: #1c7cd6;
-	border-radius: 100%;
-	transform: translate(-50%, -50%);
-	transition: all .3s;
+    position: absolute;
+    z-index: 1000;
+    background-color: #1c7cd6;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+
+    >mat-icon {
+        color: white;
+        position: relative;
+        transform: translate(100%, 100%) scale(1.2);
+    }
+
+    @include mat-elevation(2);
+    @include mat-elevation-transition;
+
+    &:hover {
+        @include mat-elevation(8);
+    }
+
+    @media (min-width: 768px) {
+        width: 175px;
+        height: 175px;
+
+        >mat-icon {
+            color: white;
+            position: relative;
+            transform: translate(125%, 125%) scale(1.6);
+        }
+    }
 }
 
-#hamburger {
-	display: none;
-}
+.sidenav {
+    width: 300px;
 
-label {
-	position: absolute;
-	width: 10rem;
-	height: 10rem;
-	border-radius: 100%;
-	transform: translate(-50%, -50%);
-	z-index: 2;
-	cursor: pointer;
-	tap-highlight-color:transparent;
-	
-	&:before {
-  content: "";
-  position: absolute;
-  top: 65%;
-		left: 65%;
-  width: 1em;
-  height: 0.15em;
-  background: white;
-  box-shadow: 
-    0 0.25em 0 0 white,
-    0 0.5em 0 0 white;
-		transform: scale(2);
-}
-}
+    @media (min-width: 768px) {
+        width: 360px;
+    }
 
-#hamburger:checked ~ .menu-container {
-	width: 30vw;
-	height: 100vh;
-	transition-delay: 0s;
-}
+    height: 100vh;
 
-#hamburger:checked ~ .menu-container .menu {
-	width: 250vh;
-	height: 250vh;
-	transition: all .3s;
-}
+    .routes {
+        width: 100%;
 
-.menu-container .links {
-	position: absolute;
-	left: 15vw;
-	top: 50vh;
-	z-index: 1;
-	transform: translate(-50%, -50%);
-	text-align: center;
-	a {
-		display: block;
-		color: white;
-		font-size: 2rem;
-		text-decoration: none;
-		margin: 3rem;
-	}
-}
+        >a {
+            font-size: 32px;
+            width: 100%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
 
-#hamburger:checked ~ .content {
-	padding-left: 35vw;
-	transition: all .2s;
-	transition-delay: 0s;
 }

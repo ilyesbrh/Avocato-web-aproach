@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+
+.register-btn {
+    width: 220px;
+    height: 45px;
+    @include mat-elevation(9);
+    @include mat-elevation-transition;
+
+    &:hover {
+        @include mat-elevation(2);
+    }
+
+}
+
+.register-card {
+
+    @media (min-width: 550px) {
+        @include mat-elevation(2);
+        @include mat-elevation-transition;
+
+        &:hover {
+            @include mat-elevation(9);
+        }
+    }
+}

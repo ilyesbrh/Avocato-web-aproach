@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +8,15 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  
-  @HostBinding('class') classes = 'row';
-  
-  constructor() { }
+  showSpinner = false;
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
+  }
+
+  login(formData) {
+    this.router.navigate(['/dashboard']);
   }
 
 }

@@ -1,3 +1,20 @@
-<p>
-  home works!
-</p>
+<div class="d-flex p-3 align-items-center justify-content-around content">
+    <img src="/assets/svg/lawyer.svg" class="img" >
+    <div class="d-flex flex-column align-items-center justify-content-around">
+        <h1>
+            The BEST lawyers friend
+        </h1>
+        <p align="center" style="font-weight: 800;color:grey">
+            the best lawyer's office manager with simple interface and riche services ,
+            <br><br> its designed to fit all lawyers needs
+            <br><br> its designed for you.. ;)
+        </p>
+        <div class="d-flex flex-column justify-content-around align-items-center">
+            <button mat-raised-button class="mt-4 login-btn" color="primary" [routerLink]="[ '/login' ]"  >LOGIN</button>
+            <div class="mt-4" style="border:1px solid grey;height: 15px;"></div>
+            <h3>O R</h3>
+            <div style="border:1px solid grey;height: 15px;"></div>
+            <button mat-button class="mt-4 sign-up" [routerLink]="[ '/register' ]"  >Sign Up</button>
+        </div>
+    </div>
+</div>

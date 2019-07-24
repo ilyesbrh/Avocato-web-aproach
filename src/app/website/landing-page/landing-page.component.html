@@ -1,16 +1,26 @@
-<input type="checkbox" id="hamburger" name="hamburger" />
-<label for="hamburger"></label>
-<div class="menu-container">
-  <div class="menu"></div>
-  <div class="links">
-    <a [routerLink]="[ '/home']">Home</a>
-    <a [routerLink]="[ '/login']">Login</a>
-    <a [routerLink]="[ '/register']">Register</a>
-    <a [routerLink]="[ '/aboutUs']">About</a>
-    <a [routerLink]="[ '/contact']">Contact</a>
-    <a [routerLink]="[ '/help']">Help</a>
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+  <mat-drawer #drawer [mode]="'overlay'">
+    <mat-sidenav-container>
+      <mat-sidenav-content class="sidenav d-flex flex-column pt-2 align-items-center" >
+        <img src="/assets/svg/logo.svg" width="200px" alt="">
+        <div class="d-flex flex-column routes mt-3">
+          <a mat-button [routerLink]="[ '/home']">Home</a>
+          <a mat-button [routerLink]="[ '/login']">Login</a>
+          <a mat-button [routerLink]="[ '/register']">Register</a>
+          <a mat-button [routerLink]="[ '/aboutUs']">About</a>
+          <a mat-button [routerLink]="[ '/contact']">Contact</a>
+          <a mat-button [routerLink]="[ '/help']">Help</a>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div class="background-img" style="width: 100%;min-height: 100vh;">
+      <button class="menu" (click)="drawer.open()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <router-outlet></router-outlet>
     </div>
-</div>
-<div class="content container">
-  <router-outlet></router-outlet>
-</div>
+  </mat-drawer-content>
+</mat-drawer-container>

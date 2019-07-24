@@ -1,10 +1,37 @@
 import { NgModule } from '@angular/core';
 
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import {
+  MatCheckboxModule,
+  MatFormFieldModule,
+  MatToolbarModule,
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule,
+  MatDialogModule,
+  MatTableModule,
+  MatMenuModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+  MatSidenavModule,
+  MatListModule,
+} from '@angular/material';
 
+const MODULES = [MatCheckboxModule,
+  MatFormFieldModule,
+  MatToolbarModule,
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule,
+  MatDialogModule,
+  MatTableModule,
+  MatMenuModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+  MatSidenavModule,
+  MatListModule]
 @NgModule({
   declarations: [],
-  imports: [MatCheckboxModule],
-  exports:[MatCheckboxModule]
+  imports: [...MODULES],
+  exports: [...MODULES]
 })
 export class MaterialComponentsModule { }

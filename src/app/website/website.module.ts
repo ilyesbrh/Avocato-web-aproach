@@ -11,12 +11,19 @@ import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { HelpComponent } from './help/help.component';
+import { MaterialComponentsModule } from '../UiLibrary/material-components/material-components.module';
+import { LoadingComponent } from './loading/loading.component';
+
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
-  declarations: [LandingPageComponent, LoginComponent, RegisterComponent, HomeComponent, AboutUsComponent, ContactComponent, HelpComponent],
+  declarations: [LandingPageComponent, LoginComponent, RegisterComponent, 
+    HomeComponent, AboutUsComponent, ContactComponent, HelpComponent, LoadingComponent],
   imports: [
     CommonModule,
     WebsiteRoutingModule,
+    MaterialComponentsModule,
+    FormsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: getToken,
