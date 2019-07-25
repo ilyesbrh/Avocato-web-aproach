@@ -8,8 +8,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 
 const routes: Routes = [
   {
-    path: 'dashboard', component: BoardComponent, children: [
-      { path: 'empty', component: AdminEmptyComponent },
+      path: '', component: BoardComponent, children: [
+      { path: '', component: AdminEmptyComponent },
       { path: 'error', component: ErrorPageComponent },
       { path: 'home', component: AdminHomeComponent }
     ]

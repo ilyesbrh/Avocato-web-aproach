@@ -17,7 +17,7 @@
     @media (min-width: 550px) {
         @include mat-elevation(2);
         @include mat-elevation-transition;
-
+        max-width: 600px;
         &:hover {
             @include mat-elevation(9);
         }

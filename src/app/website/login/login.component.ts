@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(formData) {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/admin']);
   }
 
 }

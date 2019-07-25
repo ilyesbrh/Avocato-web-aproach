@@ -1,20 +1,53 @@
-<mat-sidenav-container fullscreen>
-    <mat-sidenav #sidenav class="mat-elevation-z4" mode="over">
-        <mat-nav-list>
-            <mat-list-item>
-                <mat-icon matListIcon>house</mat-icon>
-                <h3 matLine>Home</h3>
-            </mat-list-item>
-        </mat-nav-list>
-    </mat-sidenav>
-    <div class="d-flex">
-            <mat-toolbar>
-                    <mat-toolbar-row>
-                        <span>SecondRow</span>
-                    </mat-toolbar-row>
-                    <mat-toolbar-row>
-                        <span>ThirdRow</span>
-                    </mat-toolbar-row>
-                </mat-toolbar>
-    </div>
-</mat-sidenav-container>
+<mat-drawer-container style="min-height: 100vh" [hasBackdrop]="true">
+    <mat-drawer #drawer [mode]="'overlay'">
+        <mat-sidenav-container>
+            <mat-sidenav-content class="d-flex flex-column sidenav">
+                <button class="c-drawer" (click)="drawer.close()" mat-icon-button><mat-icon>close</mat-icon></button>
+                <button mat-mini-fab class="fab"><mat-icon>settings</mat-icon></button>
+                <div class="img-bg d-flex flex-column ">
+                    <img class="img-logo mt-3 ml-3" src="/assets/svg/logo.svg" alt="">
+                    <span matLine class="username ml-4 mt-5">ilies Bourouh</span>
+                </div>
+                <mat-nav-list>
+                    <mat-list-item>
+                        <mat-icon matListIcon>home</mat-icon>
+                        <h3 matLine>Home</h3>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon matListIcon>home</mat-icon>
+                        <h3 matLine>Home</h3>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon matListIcon>home</mat-icon>
+                        <h3 matLine>Home</h3>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon matListIcon>home</mat-icon>
+                        <h3 matLine>Home</h3>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon matListIcon>home</mat-icon>
+                        <h3 matLine>Home</h3>
+                    </mat-list-item>
+                </mat-nav-list>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </mat-drawer>
+
+    <mat-drawer-content class="d-flex flex-column align-items-center px-3" style="background-color: whitesmoke;min-height: 100vh">
+        <mat-toolbar class="my-2 toolbar-elevation">
+            <div class="d-flex justify-content-between px-1 toolbar-container">
+                <button mat-icon-button (click)="drawer.open()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <button mat-button>
+                    <mat-icon class="mr-1">account_box</mat-icon>
+                    <span>username</span>
+                    <mat-icon class="mr-1">keyboard_arrow_down</mat-icon>
+                </button>
+            </div>
+        </mat-toolbar>
+        <router-outlet>
+        </router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -2,13 +2,14 @@
 
 
 .background-img {
-    background-image: url('/assets/images/Background.jpg')
+    background-image: url('/assets/images/Background.jpg');
+
 }
 
 .menu {
     position: absolute;
     z-index: 1000;
-    background-color: #1c7cd6;
+    background-color: white;
     border-radius: 100%;
     transform: translate(-50%, -50%);
     width: 120px;
@@ -40,7 +41,7 @@
 }
 
 .sidenav {
-    width: 300px;
+    width: 360px;
 
     @media (min-width: 768px) {
         width: 360px;
@@ -49,13 +50,15 @@
     height: 100vh;
 
     .routes {
-        width: 100%;
+        width: 75%;
 
-        >a {
-            font-size: 32px;
-            width: 100%;
-            padding-top: 15px;
-            padding-bottom: 15px;
+        justify-content: center;
+        align-items: center;
+        >mat-list-item {
+            margin-right: 20px;
+            font-size: 28px;
+            justify-content: center;
+            align-items: center;
         }
     }
 

@@ -5,7 +5,7 @@
       <p style="font-size: 28px;font-weight: 800">Sign up</p>
     </mat-card-header>
     <mat-card-content>
-      <form #Form="ngForm" class="mx-4 mt-4">
+      <form #Form="ngForm" class="mx-4 mt-3">
         <mat-form-field appearance="outline" style="width: 100%">
           <input matInput placeholder="Username" name="username" [(ngModel)]="Form.value.username" required>
           <mat-label>Username</mat-label>
@@ -28,7 +28,7 @@
       </form>
       <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
     </mat-card-content>
-    <mat-card-actions align="center" class="mb-5">
+    <mat-card-actions align="center" class="mb-2">
       <button type="submit" class="register-btn" (click)="login(Form.value)" mat-raised-button
         color="primary">REGISTER</button>
     </mat-card-actions>
