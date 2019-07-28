@@ -14,7 +14,11 @@ import {
   MatProgressSpinnerModule,
   MatSidenavModule,
   MatListModule,
+  MatButtonToggleModule,
+  MatRippleModule
 } from '@angular/material';
+
+
 
 const MODULES = [MatCheckboxModule,
   MatFormFieldModule,
@@ -28,7 +32,10 @@ const MODULES = [MatCheckboxModule,
   MatIconModule,
   MatProgressSpinnerModule,
   MatSidenavModule,
-  MatListModule]
+  MatListModule,
+  MatButtonToggleModule,
+  MatRippleModule
+]
 @NgModule({
   declarations: [],
   imports: [...MODULES],

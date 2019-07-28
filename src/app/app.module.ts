@@ -8,10 +8,12 @@ import { DataModuleModule } from './Store/data-module.module';
 import { GraphQlService } from './Store/graph-ql.service';
 import { WebsiteModule } from './website/website.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlipCardComponent } from './UiLibrary/flip-card/flip-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FlipCardComponent
   ],
   imports: [
     BrowserModule,

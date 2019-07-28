@@ -1,0 +1,112 @@
+@import '~@angular/material/theming';
+
+.elevation {
+    @include mat-elevation-transition;
+    @include mat-elevation(1);
+
+    &:hover {
+        @include mat-elevation(4);
+    }
+}
+
+.toggle-container {
+    @media (max-width: 576px) {
+        flex-direction: column-reverse;
+
+        mat-button-toggle-group {
+            margin-bottom: 14px;
+        }
+    }
+}
+
+.info-cards {
+    flex-basis: fit-content;
+    flex-wrap: wrap;
+
+}
+
+.info-card {
+    background-color: white;
+    @extend .elevation;
+    height: 120px;
+    min-width: 250px;
+    border-radius: 3px;
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .content {
+        width: 100%;
+
+        .number {
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .title {
+            font-size: 22px;
+            opacity: 0.5;
+        }
+    }
+
+    // Extra small devices (portrait phones, less than 576px)
+    width: 100%;
+
+    @media (min-width: 576px) {
+        width: 100%;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {
+        width: 45%;
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+        width: 48%;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        width: 22%;
+    }
+}
+
+.affair-cards {
+
+    .affair-card {
+        @extend .elevation;
+        height: 100%;
+        cursor: pointer;
+        margin: 12px;
+        width: 100%;
+
+        @media (min-width: 576px) {
+            width: 100%;
+        }
+
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 768px) {
+            width: 45%;
+        }
+
+        // Large devices (desktops, 992px and up)
+        @media (min-width: 992px) {
+            width: 22%;
+        }
+
+        // Extra large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) {
+            width: 22%;
+        }
+    }
+
+    flex-basis: fit-content;
+    flex-wrap: wrap;
+}
+
+.mat-ripple-element {
+    position: absolute;
+}

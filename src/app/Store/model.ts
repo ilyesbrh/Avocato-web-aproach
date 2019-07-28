@@ -24,6 +24,7 @@ export interface affair {
     favorite?: boolean;
     state?: string;
     tribunal?: string;
+    created_at: Date;
     audience?: [
         {
             place?: string;
@@ -77,9 +78,3 @@ export interface alert {
     name: ""
     date: ""
 }
-export function VoidAffairBuilder(): affair {
-    return {
-        numero: null, type: null, favorite: false, name: '',
-        tribunal: '', description: '', state: 'current'
-    };
-}  

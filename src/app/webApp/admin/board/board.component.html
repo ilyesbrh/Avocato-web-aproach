@@ -2,8 +2,12 @@
     <mat-drawer #drawer [mode]="'overlay'">
         <mat-sidenav-container>
             <mat-sidenav-content class="d-flex flex-column sidenav">
-                <button class="c-drawer" (click)="drawer.close()" mat-icon-button><mat-icon>close</mat-icon></button>
-                <button mat-mini-fab class="fab"><mat-icon>settings</mat-icon></button>
+                <button class="c-drawer" (click)="drawer.close()" mat-icon-button>
+                    <mat-icon>close</mat-icon>
+                </button>
+                <button mat-mini-fab class="fab">
+                    <mat-icon>settings</mat-icon>
+                </button>
                 <div class="img-bg d-flex flex-column ">
                     <img class="img-logo mt-3 ml-3" src="/assets/svg/logo.svg" alt="">
                     <span matLine class="username ml-4 mt-5">ilies Bourouh</span>
@@ -34,8 +38,9 @@
         </mat-sidenav-container>
     </mat-drawer>
 
-    <mat-drawer-content class="d-flex flex-column align-items-center px-3" style="background-color: whitesmoke;min-height: 100vh">
-        <mat-toolbar class="my-2 toolbar-elevation">
+    <mat-drawer-content class="d-flex flex-column align-items-center px-2"
+        style="background-color: whitesmoke;min-height: 100vh">
+        <mat-toolbar class="my-2 toolbar-elevation" style="border-radius: 3px;">
             <div class="d-flex justify-content-between px-1 toolbar-container">
                 <button mat-icon-button (click)="drawer.open()">
                     <mat-icon>menu</mat-icon>
@@ -47,7 +52,8 @@
                 </button>
             </div>
         </mat-toolbar>
-        <router-outlet>
-        </router-outlet>
+        <div style="width: 98.5vw;padding-bottom: 30px;">
+            <router-outlet></router-outlet>
+        </div>
     </mat-drawer-content>
 </mat-drawer-container>
